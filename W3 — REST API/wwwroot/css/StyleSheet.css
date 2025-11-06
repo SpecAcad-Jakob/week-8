@@ -33,6 +33,7 @@ header {
     width: stretch;
     min-height: 2.5rem;
     margin: -1rem -1rem 2rem -1rem;
+    padding: 0 1.5rem 0 1.5rem;
     border-bottom: solid var(--special-background-colour-adjusted) 0.25rem;
 }
 
