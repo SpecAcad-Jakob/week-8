@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Week 3 REVISITED</title>
+    <link rel="stylesheet" href="css/StyleSheet.css" />
+</head>
+<body>
+    <form>
+        <header>
+            <h1>
+                Look, ma! I'm using endpoints!'
+            </h1>
+        </header>
+
+        <div>
+            <p>
+                Hello world!
+            </p>
+        </div>
+
+        <div id="updateable">
+        </div>
+    </form>
+    
+    <!-- Stolen from a hallucinating algorithm: -->
+    <script>
+        window.addEventListener('DOMContentLoaded', loadContent1);
+
+        async function loadContent1() {
+            const response = await fetch('/partial1');
+            const html = await response.text();
+            document.getElementById('updateable').innerHTML = html;
+
+            setTimeout(loadContent2, 4000);/**/
+        }
+
+        async function loadContent2() {
+            const response = await fetch('/partial2');
+            const html = await response.text();
+            document.getElementById('updateable').innerHTML = html;
+
+            setTimeout(loadContent3, 4000);
+        }
+
+        async function loadContent3() {
+            const response = await fetch('/partial3');
+            const html = await response.text();
+            document.getElementById('updateable').innerHTML = html;
+
+            setTimeout(loadContent1, 4000);
+        }/**/
+    </script>
+</body>
+</html>

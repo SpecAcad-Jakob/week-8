@@ -1,0 +1,75 @@
+﻿:root {
+    --body-background-colour: #AAA4A0FF;
+    --main-background-colour: aliceblue;
+    --main-text-colour: #100618FF;
+    --special-background-colour: #446C90FF;
+    --special-background-colour-adjusted: #6C90AAFF;
+    --special-text-colour: ghostwhite;
+}
+
+body {
+    background-color: var(--body-background-colour);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+header {
+    --background-colour: var(--special-background-colour);
+    background-image: linear-gradient(to left, var(--special-background-colour-adjusted), var(--background-colour), var(--background-colour));
+    color: var(--special-text-colour);
+    width: stretch;
+    min-height: 2.5rem;
+    margin: -1rem -1rem 2rem -1rem;
+    border-bottom: solid var(--special-background-colour-adjusted) 0.25rem;
+}
+
+form {
+    background-color: var(--main-background-colour);
+    color: var(--main-text-colour);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    max-inline-size: 768px;
+    min-inline-size: 768px;
+    height: 100%;
+    padding: 1rem;
+    box-shadow: 1.5rem 0 1rem 0rem #00000044;
+}
+
+    form > div {
+        --background-colour: var(--special-background-colour);
+        background-image: linear-gradient(to left, 
+            var(--special-background-colour-adjusted), 
+            var(--background-colour), 
+            var(--background-colour));
+        color: var(--special-text-colour);
+        text-wrap-mode: wrap;
+        text-wrap-style: pretty;
+        box-sizing: border-box;
+        width: stretch;
+        width: -webkit-fill-available;
+        width: mox-available;
+        min-height: 2rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0.1rem 0.25rem 0.75rem 0.25rem #10102840;
+    }
+
+    form > div + div {
+        margin-top: 1rem;
+    }
