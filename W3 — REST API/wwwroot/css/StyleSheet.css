@@ -52,25 +52,81 @@ form {
     box-shadow: 1.5rem 0 1rem 0rem #00000044;
 }
 
-    form > div {
-        --background-colour: var(--special-background-colour);
-        background-image: linear-gradient(to left, 
-            var(--special-background-colour-adjusted), 
-            var(--background-colour), 
-            var(--background-colour));
-        color: var(--special-text-colour);
-        text-wrap-mode: wrap;
-        text-wrap-style: pretty;
-        box-sizing: border-box;
-        width: stretch;
-        width: -webkit-fill-available;
-        width: mox-available;
-        min-height: 2rem;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0.1rem 0.25rem 0.75rem 0.25rem #10102840;
-    }
+.container > div {
+    --background-colour: var(--special-background-colour);
+    background-image: linear-gradient(to left, var(--special-background-colour-adjusted), var(--background-colour), var(--background-colour));
+    color: var(--special-text-colour);
+    text-wrap-mode: wrap;
+    text-wrap-style: pretty;
+    box-sizing: border-box;
+    width: -webkit-fill-available;
+    width: mox-available;
+    width: stretch;
+    min-height: 2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.25rem 0.75rem 0.25rem #10102840;
+    text-shadow: 1px 1px var(--special-background-colour), -1px 1px var(--special-background-colour), 1px -1px var(--special-background-colour), -1px -1px var(--special-background-colour);
+}
 
-    form > div + div {
+    .container > div + div {
         margin-top: 1rem;
     }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-height: 15rem;
+    width: -webkit-fill-available;
+    width: mox-available;
+    width: stretch;
+}
+
+.divider {
+    height: 2px;
+    background-color: #88888888;
+    margin: 2rem 3rem;
+    width: -webkit-fill-available;
+    width: mox-available;
+    width: stretch;
+}
+
+.container.horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.button {
+    --background-colour: var(--special-background-colour);
+    background-image: linear-gradient(to left, var(--special-background-colour-adjusted), var(--background-colour), var(--background-colour));
+    color: var(--special-text-colour);
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    font-size: 1.5rem;
+    text-wrap: balance wrap;
+    border-radius: 20%;
+    border: solid var(--special-background-colour-adjusted) 0.25rem;
+    box-shadow: 0.1rem 0.25rem 0.75rem 0.25rem #10102840;
+    text-shadow: 1px 1px var(--special-background-colour), 
+        -1px 1px var(--special-background-colour), 
+        1px -1px var(--special-background-colour), 
+        -1px -1px var(--special-background-colour);
+    transition: background-image ease-in-out 5s, transform ease-out 0.25s;
+}
+
+    .button:hover {
+        background-image: linear-gradient(to right, 
+            var(--special-background-colour-adjusted), 
+            var(--special-background-colour-adjusted), 
+            var(--background-colour));
+        transform: scale(105%);
+    }
+
+.button > i {
+    font-size: 0.75rem; 
+    font-style: normal;
+}

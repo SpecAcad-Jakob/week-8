@@ -23,6 +23,16 @@ namespace W3_REST_API
             app.MapGet("/partial2", () => Results.File("partialpage2.html", "text/html"));
             app.MapGet("/partial3", () => Results.File("partialpage3.html", "text/html"));
 
+            //  Query endpoints as required by assignment. I hadn't time to implement these
+            app.MapPost("/query/create", () => {
+            });
+            app.MapGet("/query/read", (int id) => { 
+            });
+            app.MapPut("/query/update", (int id) => {
+            });
+            app.MapDelete("/query/delete", () => {
+            });
+
             app.Run();
 
             /*var builder = WebApplication.CreateBuilder(args);
